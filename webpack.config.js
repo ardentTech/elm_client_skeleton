@@ -6,6 +6,8 @@ var autoprefixer = require('autoprefixer');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
+require("dotenv").config();
+
 
 const prod = 'production';
 const dev = 'development';
