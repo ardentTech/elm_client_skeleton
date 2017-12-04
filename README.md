@@ -34,6 +34,12 @@ npm run reinstall
 *This does a clean (re)install of all npm and elm packages, plus a global elm install.*
 
 
+### Setup:
+```
+echo 'API_URL="http://127.0.0.1:8000/v1/"' > .env
+```
+
+
 ### Serve locally:
 ```
 npm start
