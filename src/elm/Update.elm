@@ -13,4 +13,4 @@ update msg model =
   case msg of
     NoOp -> ( model, Cmd.none )
     UrlChange location -> (
-      { model | currentRoute = parsePath route location }, Command.for msg )
+      { model | currentRoute = parsePath route location }, Command.forMsg msg )

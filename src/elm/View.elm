@@ -1,6 +1,7 @@
 module View exposing (view)
 
 import Html exposing (Html, div, h3, text)
+import Html.Attributes exposing (class)
 
 import Message exposing (Msg(..))
 import Model exposing (Model)
@@ -9,14 +10,17 @@ import Router exposing (Route(..))
 
 view : Model -> Html Msg
 view model =
-  fromRoute model.currentRoute <| model
+  let
+    childView = forRoute model.currentRoute <| model
+  in
+    div [ class "container" ] [ childView ]
 
 
 -- PRIVATE
 
 
-fromRoute : Maybe Route -> (Model -> Html Msg)
-fromRoute route =
+forRoute : Maybe Route -> (Model -> Html Msg)
+forRoute route =
   case route of
     Just Index -> indexView
     _ -> notFoundView

@@ -1,10 +1,10 @@
-module Command exposing (for)
+module Command exposing (forMsg)
 
 import Message exposing (Msg(..))
 
 
-for : Msg -> Cmd Msg
-for msg =
+forMsg : Msg -> Cmd Msg
+forMsg msg =
   case msg of
     UrlChange location -> Cmd.none
     _ -> Cmd.none
