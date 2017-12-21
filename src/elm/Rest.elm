@@ -1,4 +1,4 @@
-module Rest exposing (errorString, get, getList, post)
+module Rest exposing (errorString, getDetail, getList, post)
 
 import Http exposing (Error(..))
 import Json.Decode exposing (Decoder)
@@ -19,7 +19,7 @@ errorString error =
 
 
 getDetail : String -> Decoder a -> (Result Error a -> b) -> Cmd b
-get url decoder resultToMsg =
+getDetail url decoder resultToMsg =
   Http.send resultToMsg <| Http.get url decoder
 
 
