@@ -1,21 +1,10 @@
-module Api exposing (urlFor)
-
-
-urlFor : Host -> Endpoint -> String
-urlFor host endpoint =
-  host ++ "/" ++ <| pathFrom endpoint
-
-
--- PRIVATE
+module Api exposing (pathForEndpoint)
 
 
 type Endpoint = Todo
 
 
-type alias Host = String
-
-
-pathFrom : Endpoint -> String
-pathFrom endpoint =
+pathForEndpoint : Endpoint -> String
+pathForEndpoint endpoint =
   case endpoint of
     Todo -> "todo"
