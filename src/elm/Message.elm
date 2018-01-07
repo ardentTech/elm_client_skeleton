@@ -1,6 +1,11 @@
 module Message exposing (Msg(..))
 
 import Navigation exposing (Location)
+import Time
 
 
-type Msg = NoOp | UrlChange Location
+type Msg =
+  CurrentTime Time.Time |
+  NewUrl String |
+  NoOp |
+  UrlChange Location

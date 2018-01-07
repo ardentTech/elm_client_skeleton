@@ -37,8 +37,11 @@ npm run reinstall
 ### Setup:
 ```
 echo 'API_URL="http://127.0.0.1:8000/v1/"' > .env
-```
 
+
+### Todo:
+1. Component-based internal/external message flow
+2. Bootstrap base container, row, etc.
 
 ### Serve locally:
 ```
