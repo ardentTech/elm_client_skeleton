@@ -1,4 +1,4 @@
-module Rest exposing (errorString, getDetail, getList, post)
+module Rest exposing (errorString, getDetail, getList, getListPaginate, post)
 
 import Http exposing (Error(..))
 import Json.Decode exposing (Decoder)
@@ -23,8 +23,13 @@ getDetail url decoder resultToMsg =
   Http.send resultToMsg <| Http.get url decoder
 
 
-getList : String -> Decoder (List a) -> (Result Error (Pagination a) -> b) -> Cmd b
+getList : String -> Decoder (List a) -> (Result Error (List a) -> b) -> Cmd b
 getList url listDecoder resultToMsg =
+  Http.send resultToMsg <| Http.get url listDecoder
+
+
+getListPaginate : String -> Decoder (List a) -> (Result Error (Pagination a) -> b) -> Cmd b
+getListPaginate url listDecoder resultToMsg =
   Http.send resultToMsg <| Http.get url (paginationDecoder listDecoder)
 
 

@@ -1,4 +1,4 @@
 module Flag exposing (Flags)
 
 
-type alias Flags = { apiUrl : String }
+type alias Flags = { docRoot : String }

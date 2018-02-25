@@ -12,17 +12,17 @@ import Router exposing (Route, route)
 
 type alias Model = {
   alert : Alert,
-  apiUrl : String,
   child : Child.Model.Model,
   currentRoute : Maybe Route,
-  currentTime : Maybe Time.Time
+  currentTime : Maybe Time.Time,
+  docRoot : String
 }
 
 
 init : Flags -> Location -> Model
 init flags location = {
   alert = Alert.init,
-  apiUrl = flags.apiUrl,
   child = Child.Model.init,
   currentRoute = parsePath route location,
-  currentTime = Nothing }
+  currentTime = Nothing,
+  docRoot = flags.docRoot }
