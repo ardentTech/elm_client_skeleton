@@ -36,7 +36,7 @@ npm run reinstall
 
 ### Setup:
 ```
-echo 'API_URL="http://127.0.0.1:8000/v1/"' > .env
+echo 'DOC_ROOT="http://127.0.0.1:8000/v1/"' > .env
 
 
 ### Todo:

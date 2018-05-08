@@ -53,7 +53,7 @@ var commonConfig = {
             inject: 'body',
             filename: 'index.html'
         }),
-        new webpack.EnvironmentPlugin(["API_URL"]),
+        new webpack.EnvironmentPlugin(["DOC_ROOT"]),
     ]
 }
 
@@ -119,17 +119,18 @@ if (isProd === true) {
                 from: '.htaccess'
             }, {
                 from: 'src/favicon.ico'
-            }]),
+            }])
 
             // extract CSS into a separate file
             // minify & mangle JS/CSS
-            new webpack.optimize.UglifyJsPlugin({
-                minimize: true,
-                compressor: {
-                    warnings: false
-                }
-                // mangle:  true
-            })
+            // @todo fix this
+//            new webpack.optimize.UglifyJsPlugin({
+//                minimize: true,
+//                compressor: {
+//                    warnings: false
+//                }
+//                // mangle:  true
+//            })
         ]
     });
 }
